@@ -2,7 +2,7 @@ import * as notes from "./piano_notes.js"
 import * as sounds from "./piano_sounds.js"
 
 let piano = document.getElementById("piano");
-const DEFUALT_OCTAVE = notes.OCTAVES["C2"];
+const DEFUALT_OCTAVE = notes.OCTAVES["C4"];
 let current_octave = DEFUALT_OCTAVE;
 let current_playing_note = new Audio();
 
@@ -13,7 +13,6 @@ document.addEventListener("keyup", () =>{
     piano.src = notes.PIANO_BLANK;
 
 })
-
 
 function playAudio(key_audio)
 {
@@ -106,13 +105,33 @@ function logKey(e)
             piano.src = notes.PIANO_HIGH_E_FLAT_PRESSED;
             break;
 
+        case "KeyJ":
+            changeOctave("up");
+            break;
+
+        case "KeyK":
+            changeOctave("down");
+            break;
+
         default:
             break;
     }
 }
 
-function octaveChanger()
+
+function changeOctave(direction)
 {
     let octave_level = document.getElementById("octave-lv");
-    octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[current_octave];
+
+    //increase the octave, if the direction is up, and the current octave is not at the highest octave
+    if(direction == "up" && notes.LIST_OF_ALL_OCTAVES[current_octave] != notes.HIGHEST_OCTAVE)
+    {
+        octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[++current_octave];
+    }
+
+    //increase the octave, if the direction is down, and the current octave is not at the lowest octave
+    else if(direction == "down" && notes.LIST_OF_ALL_OCTAVES[current_octave] !=  notes.LOWEST_OCTAVE)
+    {
+        octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[--current_octave];
+    }
 }
