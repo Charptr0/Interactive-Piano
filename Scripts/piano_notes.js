@@ -1,9 +1,4 @@
 export const PIANO_BLANK = "./Images/piano_blank.png";
-export const PIANO_C2_OCTAVE= "./Images/piano_C2_u.png";
-export const PIANO_C3_OCTAVE = "./Images/piano_C3_u.png"
-export const PIANO_C4_OCTAVE = "./Images/piano_C4_u.png"
-export const PIANO_C5_OCTAVE = "./Images/piano_C5_u.png"
-export const PIANO_C6_OCTAVE = "./Images/piano_C6_u.png"
 
 export const PIANO_C_PRESSED = "./Images/piano_C_p.png";
 export const PIANO_CS_PRESSED = "./Images/piano_CS_p.png";
@@ -23,19 +18,7 @@ export const PIANO_HIGH_D_PRESSED = "./Images/piano_hD_p.png";
 export const PIANO_HIGH_E_FLAT_PRESSED = "./Images/piano_hEb_p.png";
 export const PIANO_HIGH_E_PRESSED = "./Images/piano_hE_p.png";
 
-export const LIST_OF_ALL_OCTAVES = ["C2", "C3", "C4", "C5", "C6"];
-//export const LIST_OF_ALL_NOTES = ["C", "CS", "D", "Eb", "E", "F", "FS", "G", "Ab", "A", "Bb", "B"];
-export const LOWEST_OCTAVE = LIST_OF_ALL_OCTAVES[0];
-export const HIGHEST_OCTAVE = LIST_OF_ALL_OCTAVES[(LIST_OF_ALL_OCTAVES.length)-1]
-export const OCTAVES =
-{
-    C2: 0,
-    C3: 1,
-    C4: 2,
-    C5: 3,
-    C6: 4,
-};
-
+export const LIST_OF_ALL_NOTES = ["C", "CS", "D", "Eb", "E", "F", "FS", "G", "Ab", "A", "Bb", "B", "hC", "hCS", "hD", "hEb", "hE"];
 export const NOTES = 
 {
     C : 0,
@@ -49,5 +32,11 @@ export const NOTES =
     Ab : 8,
     A : 9,
     Bb : 10,
-    B : 11
+    B : 11,
+    hC : 12,
+    hCS : 13,
+    hD : 14,
+    hEb : 15,
+    hE : 16
+
 };

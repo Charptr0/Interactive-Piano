@@ -1,12 +1,13 @@
 import * as notes from "./piano_notes.js"
-import * as sounds from "./piano_sounds.js"
+import * as octaves from "./octaves.js"
+import * as piano_sounds from "./notes_dictionary.js"
 
 let piano = document.getElementById("piano");
-const DEFUALT_OCTAVE = notes.OCTAVES["C4"];
+const DEFUALT_OCTAVE = octaves.OCTAVES["C4"];
 let current_octave = DEFUALT_OCTAVE;
 let current_playing_note = new Audio();
 
-document.getElementById("octave-lv").innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[current_octave];
+document.getElementById("octave-lv").innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[current_octave];
 
 document.addEventListener("keydown", playNote);
 document.addEventListener("keyup", (e) =>{
@@ -23,14 +24,17 @@ function playAudio(note)
     current_playing_note.pause();
     current_playing_note.currentTime = 0;
 
-    switch(note)
+    switch(current_octave)
     {
-        case notes.NOTES.C:
-            if(current_octave == notes.OCTAVES.C2) current_playing_note = sounds.C2_AUDIO;
-            else if(current_octave == notes.OCTAVES.C3) current_playing_note = sounds.C3_AUDIO;
-            else if(current_octave == notes.OCTAVES.C4) current_playing_note = sounds.C4_AUDIO;
-            else if(current_octave == notes.OCTAVES.C5) current_playing_note = sounds.C5_AUDIO;
-            else current_playing_note = sounds.C6_AUDIO;
+        case octaves.OCTAVES.C2:
+            current_playing_note = piano_sounds.C2_OCTAVES_NOTES[notes.LIST_OF_ALL_NOTES[note]]
+            break;
+
+        case octaves.OCTAVES.C3:
+            current_playing_note = piano_sounds.C3_OCTAVES_NOTES[notes.LIST_OF_ALL_NOTES[note]]
+            break;
+
+        case octaves.OCTAVES.C4:
             break;
 
         default:
@@ -82,17 +86,17 @@ function playNote(e)
 
         case "Digit8":
             piano.src = notes.PIANO_HIGH_C_PRESSED;
-            playAudio(notes.NOTES.C);
+            playAudio(notes.NOTES.hC);
             break;
 
         case "Digit9":
             piano.src = notes.PIANO_HIGH_D_PRESSED;
-            playAudio(notes.NOTES.D);
+            playAudio(notes.NOTES.hD);
             break;
 
         case "Digit0":
             piano.src = notes.PIANO_HIGH_E_PRESSED;
-            playAudio(notes.NOTES.E);
+            playAudio(notes.NOTES.hE);
             break;
 
         case "KeyQ":
@@ -102,26 +106,32 @@ function playNote(e)
 
         case "KeyW":
             piano.src = notes.PIANO_E_FLAT_PRESSED;
+            playAudio(notes.NOTES.Eb);
             break;
 
         case "KeyE":
             piano.src = notes.PIANO_FS_PRESSED;
+            playAudio(notes.NOTES.FS);
             break;
 
         case "KeyR":
             piano.src = notes.PIANO_A_FLAT_PRESSED;
+            playAudio(notes.NOTES.Ab);
             break;
 
         case "KeyT":
             piano.src = notes.PIANO_B_FLAT_PRESSED;
+            playAudio(notes.NOTES.Bb);
             break;
 
         case "KeyY":
             piano.src = notes.PIANO_HIGH_CS_PRESSED;
+            playAudio(notes.NOTES.hCS);
             break;
 
         case "KeyU":
             piano.src = notes.PIANO_HIGH_E_FLAT_PRESSED;
+            playAudio(notes.NOTES.hEb);
             break;
 
         case "KeyJ":
@@ -142,37 +152,37 @@ function changePianoOctave(direction)
     let octave_level = document.getElementById("octave-lv");
 
     //increase the octave, if the direction is up, and the current octave is not at the highest octave
-    if(direction == "up" && notes.LIST_OF_ALL_OCTAVES[current_octave] != notes.HIGHEST_OCTAVE)
+    if(direction == "up" && octaves.LIST_OF_ALL_OCTAVES[current_octave] != octaves.HIGHEST_OCTAVE)
     {
-        octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[++current_octave];
+        octave_level.innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[++current_octave];
     }
 
     //increase the octave, if the direction is down, and the current octave is not at the lowest octave
-    else if(direction == "down" && notes.LIST_OF_ALL_OCTAVES[current_octave] !=  notes.LOWEST_OCTAVE)
+    else if(direction == "down" && octaves.LIST_OF_ALL_OCTAVES[current_octave] !=  octaves.LOWEST_OCTAVE)
     {
-        octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[--current_octave];
+        octave_level.innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[--current_octave];
     }
 
     switch(current_octave)
     {
-        case notes.OCTAVES.C2:
-            piano.src = notes.PIANO_C2_OCTAVE;
+        case octaves.OCTAVES.C2:
+            piano.src = octaves.PIANO_C2_OCTAVE;
             break;
 
-        case notes.OCTAVES.C3:
-            piano.src = notes.PIANO_C3_OCTAVE;
+        case octaves.OCTAVES.C3:
+            piano.src = octaves.PIANO_C3_OCTAVE;
             break;
 
-        case notes.OCTAVES.C4:
-            piano.src = notes.PIANO_C4_OCTAVE;
+        case octaves.OCTAVES.C4:
+            piano.src = octaves.PIANO_C4_OCTAVE;
             break;
 
-        case notes.OCTAVES.C5:
-            piano.src = notes.PIANO_C5_OCTAVE;
+        case octaves.OCTAVES.C5:
+            piano.src = octaves.PIANO_C5_OCTAVE;
             break;
 
-        case notes.OCTAVES.C6:
-            piano.src = notes.PIANO_C6_OCTAVE;
+        case octaves.OCTAVES.C6:
+            piano.src = octaves.PIANO_C6_OCTAVE;
             break;
 
         default:
