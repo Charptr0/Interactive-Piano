@@ -9,9 +9,12 @@ let current_playing_note = new Audio();
 document.getElementById("octave-lv").innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[current_octave];
 
 document.addEventListener("keydown", logKey);
-document.addEventListener("keyup", () =>{
+document.addEventListener("keyup", (e) =>{
+    
+    if(e.code == "KeyJ" || e.code == "KeyK") return;
+    
     piano.src = notes.PIANO_BLANK;
-
+    
 })
 
 function playAudio(key_audio)
@@ -118,6 +121,34 @@ function logKey(e)
     }
 }
 
+function changePianoOctave()
+{
+    switch(current_octave)
+    {
+        case notes.OCTAVES.C2:
+            piano.src = notes.PIANO_C2_OCTAVE;
+            break;
+
+        case notes.OCTAVES.C3:
+            piano.src = notes.PIANO_C3_OCTAVE;
+            break;
+
+        case notes.OCTAVES.C4:
+            piano.src = notes.PIANO_C4_OCTAVE;
+            break;
+
+        case notes.OCTAVES.C5:
+            piano.src = notes.PIANO_C5_OCTAVE;
+            break;
+
+        case notes.OCTAVES.C6:
+            piano.src = notes.PIANO_C6_OCTAVE;
+            break;
+
+        default:
+            break;
+    }
+}
 
 function changeOctave(direction)
 {
@@ -134,4 +165,6 @@ function changeOctave(direction)
     {
         octave_level.innerHTML = "Current Octave: " + notes.LIST_OF_ALL_OCTAVES[--current_octave];
     }
+
+    changePianoOctave();
 }
