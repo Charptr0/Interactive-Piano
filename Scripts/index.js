@@ -35,11 +35,19 @@ function playAudio(note)
             break;
 
         case octaves.OCTAVES.C4:
+            current_playing_note = piano_sounds.C4_OCTAVES_NOTES[notes.LIST_OF_ALL_NOTES[note]]
+            break;
+
+        case octaves.OCTAVES.C5:
+            current_playing_note = piano_sounds.C5_OCTAVES_NOTES[notes.LIST_OF_ALL_NOTES[note]]
+            break;
+
+        case octaves.OCTAVES.C6:
+            current_playing_note = piano_sounds.C6_OCTAVES_NOTES[notes.LIST_OF_ALL_NOTES[note]]
             break;
 
         default:
             break;
-
     }
     
     current_playing_note.play();

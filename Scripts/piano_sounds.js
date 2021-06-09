@@ -43,4 +43,52 @@ export const CS4_AUDIO = audioGenerator("./Sounds/CS4.mp3");
 export const D4_AUDIO = audioGenerator("./Sounds/D4.mp3");
 export const E_FLAT_4_AUDIO = audioGenerator("./Sounds/Eb4.mp3");
 export const E4_AUDIO = audioGenerator("./Sounds/E4.mp3");
+export const F4_AUDIO = audioGenerator("./Sounds/F4.mp3");
+export const FS4_AUDIO = audioGenerator("./Sounds/FS4.mp3");
+export const G4_AUDIO = audioGenerator("./Sounds/G4.mp3");
+export const A_FLAT_4_AUDIO = audioGenerator("./Sounds/Ab4.mp3");
+export const A4_AUDIO = audioGenerator("./Sounds/A4.mp3");
+export const B_FLAT_4_AUDIO = audioGenerator("./Sounds/Bb4.mp3");
+export const B4_AUDIO = audioGenerator("./Sounds/B4.mp3");
+////////////////////////////////////////////////////////////
+
+// Notes in the C5 octave
+////////////////////////////////////////////////////////////
+export const C5_AUDIO = audioGenerator("./Sounds/C5.mp3");
+export const CS5_AUDIO = audioGenerator("./Sounds/CS5.mp3");
+export const D5_AUDIO = audioGenerator("./Sounds/D5.mp3");
+export const E_FLAT_5_AUDIO = audioGenerator("./Sounds/Eb5.mp3");
+export const E5_AUDIO = audioGenerator("./Sounds/E5.mp3");
+export const F5_AUDIO = audioGenerator("./Sounds/F5.mp3");
+export const FS5_AUDIO = audioGenerator("./Sounds/FS5.mp3");
+export const G5_AUDIO = audioGenerator("./Sounds/G5.mp3");
+export const A_FLAT_5_AUDIO = audioGenerator("./Sounds/Ab5.mp3");
+export const A5_AUDIO = audioGenerator("./Sounds/A5.mp3");
+export const B_FLAT_5_AUDIO = audioGenerator("./Sounds/Bb5.mp3");
+export const B5_AUDIO = audioGenerator("./Sounds/B5.mp3");
+////////////////////////////////////////////////////////////
+
+// Notes in the C6 octave
+////////////////////////////////////////////////////////////
+export const C6_AUDIO = audioGenerator("./Sounds/C6.mp3");
+export const CS6_AUDIO = audioGenerator("./Sounds/CS6.mp3");
+export const D6_AUDIO = audioGenerator("./Sounds/D6.mp3");
+export const E_FLAT_6_AUDIO = audioGenerator("./Sounds/Eb6.mp3");
+export const E6_AUDIO = audioGenerator("./Sounds/E6.mp3");
+export const F6_AUDIO = audioGenerator("./Sounds/F6.mp3");
+export const FS6_AUDIO = audioGenerator("./Sounds/FS6.mp3");
+export const G6_AUDIO = audioGenerator("./Sounds/G6.mp3");
+export const A_FLAT_6_AUDIO = audioGenerator("./Sounds/Ab6.mp3");
+export const A6_AUDIO = audioGenerator("./Sounds/A6.mp3");
+export const B_FLAT_6_AUDIO = audioGenerator("./Sounds/Bb6.mp3");
+export const B6_AUDIO = audioGenerator("./Sounds/B6.mp3");
+////////////////////////////////////////////////////////////
+
+// Notes in the C7 octave
+////////////////////////////////////////////////////////////
+export const C7_AUDIO = audioGenerator("./Sounds/C7.mp3");
+export const CS7_AUDIO = audioGenerator("./Sounds/CS7.mp3");
+export const D7_AUDIO = audioGenerator("./Sounds/D7.mp3");
+export const E_FLAT_7_AUDIO = audioGenerator("./Sounds/Eb7.mp3");
+export const E7_AUDIO = audioGenerator("./Sounds/E7.mp3");
 ////////////////////////////////////////////////////////////
