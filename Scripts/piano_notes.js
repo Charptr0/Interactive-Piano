@@ -24,6 +24,7 @@ export const PIANO_HIGH_E_FLAT_PRESSED = "./Images/piano_hEb_p.png";
 export const PIANO_HIGH_E_PRESSED = "./Images/piano_hE_p.png";
 
 export const LIST_OF_ALL_OCTAVES = ["C2", "C3", "C4", "C5", "C6"];
+//export const LIST_OF_ALL_NOTES = ["C", "CS", "D", "Eb", "E", "F", "FS", "G", "Ab", "A", "Bb", "B"];
 export const LOWEST_OCTAVE = LIST_OF_ALL_OCTAVES[0];
 export const HIGHEST_OCTAVE = LIST_OF_ALL_OCTAVES[(LIST_OF_ALL_OCTAVES.length)-1]
 export const OCTAVES =
@@ -33,4 +34,20 @@ export const OCTAVES =
     C4: 2,
     C5: 3,
     C6: 4,
+};
+
+export const NOTES = 
+{
+    C : 0,
+    CS : 1,
+    D : 2,
+    Eb : 3,
+    E : 4,
+    F : 5,
+    FS : 6,
+    G : 7,
+    Ab : 8,
+    A : 9,
+    Bb : 10,
+    B : 11
 };
