@@ -22,10 +22,53 @@ p
     font-size: 30px;
 }
 
-#piano
+ul 
+{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+img
 {
     display: block;
     margin: 0 auto;
+}
+
+figcaption
+{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+#piano
+{
     padding-top: 50px;
     width: 60%
+}
+
+#instruction-list
+{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+#natural-keys, #accidential-keys
+{
+    text-align: left;
+}
+
+#github-image
+{
+    width: 80px;
+    margin-top: 100px;
+}
+
+footer
+{
+    background-color: black;
+    text-align: center;
 }

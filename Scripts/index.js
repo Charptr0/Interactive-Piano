@@ -2,13 +2,15 @@ import * as notes from "./piano_notes.js"
 import * as octaves from "./octaves.js"
 import * as piano_sounds from "./notes_dictionary.js"
 
-let piano = document.getElementById("piano");
-const DEFUALT_OCTAVE = octaves.OCTAVES["C4"];
+let piano = document.getElementById("piano"); //the piano image
+const DEFUALT_OCTAVE = octaves.OCTAVES["C4"]; //the defualt octave that is gonna show when the page first loads
 let current_octave = DEFUALT_OCTAVE;
 let current_playing_note = new Audio();
 
-document.getElementById("octave-lv").innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[current_octave];
+//when the page first loads, set the octave level to be the defualt octave
+document.getElementById("octave-lv").innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[current_octave]; 
 
+//listeners
 document.addEventListener("keydown", playNote);
 document.addEventListener("keyup", (e) =>{
     
@@ -18,6 +20,7 @@ document.addEventListener("keyup", (e) =>{
     
 })
 
+//given the note pressed, play that note
 function playAudio(note)
 {
     //stop the current playing note
@@ -53,100 +56,101 @@ function playAudio(note)
     current_playing_note.play();
 }
 
+//keyboard inputs for what notes to play
 function playNote(e)
 {
     switch(e.code)
     {
-        case "Digit1":
+        case "Digit1": //1 -> C
             piano.src = notes.PIANO_C_PRESSED;
             playAudio(notes.NOTES.C);
             break;
 
-        case "Digit2":
+        case "Digit2": //2 -> D
             piano.src = notes.PIANO_D_PRESSED;
             playAudio(notes.NOTES.D);
             break;
 
-        case "Digit3":
+        case "Digit3": //3 -> E
             piano.src = notes.PIANO_E_PRESSED;
             playAudio(notes.NOTES.E);
             break;
 
-        case "Digit4":
+        case "Digit4": //4 -> F
             piano.src = notes.PIANO_F_PRESSED;
             playAudio(notes.NOTES.F);
             break;
 
-        case "Digit5":
+        case "Digit5": //5 -> G
             piano.src = notes.PIANO_G_PRESSED;
             playAudio(notes.NOTES.G);
             break;
 
-        case "Digit6":
+        case "Digit6": //6 -> A
             piano.src = notes.PIANO_A_PRESSED;
             playAudio(notes.NOTES.A);
             break;
         
-        case "Digit7":
+        case "Digit7": //7 -> B
             piano.src = notes.PIANO_B_PRESSED;
             playAudio(notes.NOTES.B);
             break;
 
-        case "Digit8":
+        case "Digit8": //8 -> high C
             piano.src = notes.PIANO_HIGH_C_PRESSED;
             playAudio(notes.NOTES.hC);
             break;
 
-        case "Digit9":
+        case "Digit9": //9 -> high D
             piano.src = notes.PIANO_HIGH_D_PRESSED;
             playAudio(notes.NOTES.hD);
             break;
 
-        case "Digit0":
+        case "Digit0": //0 -> high E
             piano.src = notes.PIANO_HIGH_E_PRESSED;
             playAudio(notes.NOTES.hE);
             break;
 
-        case "KeyQ":
+        case "KeyQ": //q -> C#
             piano.src = notes.PIANO_CS_PRESSED;
             playAudio(notes.NOTES.CS);
             break;
 
-        case "KeyW":
+        case "KeyW": //w -> Eb
             piano.src = notes.PIANO_E_FLAT_PRESSED;
             playAudio(notes.NOTES.Eb);
             break;
 
-        case "KeyE":
+        case "KeyE": //e -> F#
             piano.src = notes.PIANO_FS_PRESSED;
             playAudio(notes.NOTES.FS);
             break;
 
-        case "KeyR":
+        case "KeyR": //r -> Ab
             piano.src = notes.PIANO_A_FLAT_PRESSED;
             playAudio(notes.NOTES.Ab);
             break;
 
-        case "KeyT":
+        case "KeyT": //t -> Bb
             piano.src = notes.PIANO_B_FLAT_PRESSED;
             playAudio(notes.NOTES.Bb);
             break;
 
-        case "KeyY":
+        case "KeyY": //y -> high C#
             piano.src = notes.PIANO_HIGH_CS_PRESSED;
             playAudio(notes.NOTES.hCS);
             break;
 
-        case "KeyU":
+        case "KeyU": //u -> high Eb
             piano.src = notes.PIANO_HIGH_E_FLAT_PRESSED;
             playAudio(notes.NOTES.hEb);
             break;
 
-        case "KeyJ":
+        case "KeyJ": //j -> move up an octave
             changePianoOctave("up");
             break;
 
-        case "KeyK":
+        case "KeyK": //k -> move down an octave
             changePianoOctave("down");
             break;
 
@@ -155,6 +159,7 @@ function playNote(e)
     }
 }
 
+//change the piano octave up or down based on the given direction
 function changePianoOctave(direction)
 {
     let octave_level = document.getElementById("octave-lv");
@@ -171,6 +176,7 @@ function changePianoOctave(direction)
         octave_level.innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[--current_octave];
     }
 
+    //change the piano image to the matching octave
     switch(current_octave)
     {
         case octaves.OCTAVES.C2:
