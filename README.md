@@ -2,5 +2,5 @@
 
 Play the piano by only using your keyboard.
 
-Website Link: https://projects.charptrzero.com/interactivepiano/
+Website Link: https://projects.charptrzero.com/project1/interactivepiano
 
