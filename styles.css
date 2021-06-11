@@ -16,7 +16,7 @@ h2
     font-size: 60px;
 }
 
-.collapsibles 
+.collapsible 
 {
     background-color: #2e2e2e;
     color: rgb(255, 255, 255);
@@ -76,7 +76,7 @@ figcaption
     justify-content: space-around;
 }
 
-#natural-keys, #accidential-keys
+#natural-keys, #accidential-keys, #octaves-instructions
 {
     text-align: left;
 }
@@ -91,4 +91,24 @@ footer
 {
     background-color: black;
     text-align: center;
+}
+
+@media screen and (max-width: 655px)
+{
+    #instruction-list
+    {
+        display: inline-block;
+    }
+
+    #accidential-keys
+    {
+        padding-top: 20px;
+    }
+
+    #octaves-instructions
+    {
+        padding-top: 20px;
+        margin-left: -20px;
+    }
+
 }
