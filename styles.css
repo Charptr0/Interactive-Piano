@@ -69,6 +69,14 @@ figcaption
     width: 60%
 }
 
+#play-note-button
+{
+    margin-top: 20px;
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: green;
+}
+
 #instruction-list
 {
     display: flex;
@@ -93,8 +101,44 @@ footer
     text-align: center;
 }
 
+#mobile
+{
+    text-align: center;
+    margin-top: 50px;
+}
+
 @media screen and (max-width: 655px)
 {
+    #instruction-list
+    {
+        display: inline-block;
+    }
+
+    #accidential-keys
+    {
+        padding-top: 20px;
+    }
+
+    #octaves-instructions
+    {
+        padding-top: 20px;
+        margin-left: -20px;
+    }
+
+}
+
+@media screen and (max-width: 397px)
+{
+    h1
+    {
+        font-size: 60px;
+    }
+
+    h2
+    {
+        font-size: 40px;
+    }
+
     #instruction-list
     {
         display: inline-block;

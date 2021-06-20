@@ -3,12 +3,15 @@ import * as octaves from "./octaves.js"
 import * as piano_sounds from "./notes_dictionary.js"
 
 let piano = document.getElementById("piano"); //the piano image
+let mobile_input = document.getElementById("mobile-input");
+let play_note_button = document.getElementById("play-note-button");
 const DEFUALT_OCTAVE = octaves.OCTAVES["C4"]; //the defualt octave that is gonna show when the page first loads
 let current_octave = DEFUALT_OCTAVE;
 let current_playing_note = new Audio();
 
 //when the page first loads, set the octave level to be the defualt octave
 document.getElementById("octave-lv").innerHTML = "Current Octave: " + octaves.LIST_OF_ALL_OCTAVES[current_octave]; 
+document.getElementById("play-note-button").addEventListener("click", clickToPlay);
 
 //listeners
 document.addEventListener("keydown", playNote);
@@ -19,6 +22,126 @@ document.addEventListener("keyup", (e) =>{
     piano.src = notes.PIANO_BLANK;
     
 })
+
+function clickToPlay()
+{
+    parseNote(mobile_input.value);
+    mobile_input.value = "";
+    setTimeout(() => piano.src = notes.PIANO_BLANK, 200);
+}
+
+function parseNote(input)
+{
+    switch(input)
+    {
+        case "1":
+            piano.src = notes.PIANO_C_PRESSED;
+            playAudio(notes.NOTES.C);
+            break;
+        
+        case "2": //2 -> D
+            piano.src = notes.PIANO_D_PRESSED;
+            playAudio(notes.NOTES.D);
+            break;
+
+        case "3": //3 -> E
+            piano.src = notes.PIANO_E_PRESSED;
+            playAudio(notes.NOTES.E);
+            break;
+
+        case "4": //4 -> F
+            piano.src = notes.PIANO_F_PRESSED;
+            playAudio(notes.NOTES.F);
+            break;
+
+        case "5": //5 -> G
+            piano.src = notes.PIANO_G_PRESSED;
+            playAudio(notes.NOTES.G);
+            break;
+
+        case "6": //6 -> A
+            piano.src = notes.PIANO_A_PRESSED;
+            playAudio(notes.NOTES.A);
+            break;
+        
+        case "7": //7 -> B
+            piano.src = notes.PIANO_B_PRESSED;
+            playAudio(notes.NOTES.B);
+            break;
+
+        case "8": //8 -> high C
+            piano.src = notes.PIANO_HIGH_C_PRESSED;
+            playAudio(notes.NOTES.hC);
+            break;
+
+        case "9": //9 -> high D
+            piano.src = notes.PIANO_HIGH_D_PRESSED;
+            playAudio(notes.NOTES.hD);
+            break;
+
+        case "0": //0 -> high E
+            piano.src = notes.PIANO_HIGH_E_PRESSED;
+            playAudio(notes.NOTES.hE);
+            break;
+
+        case "Q":
+        case "q": //q -> C#
+            piano.src = notes.PIANO_CS_PRESSED;
+            playAudio(notes.NOTES.CS);
+            break;
+
+        case "W":
+        case "w": //w -> Eb
+            piano.src = notes.PIANO_E_FLAT_PRESSED;
+            playAudio(notes.NOTES.Eb);
+            break;
+
+        case "E":
+        case "e": //e -> F#
+            piano.src = notes.PIANO_FS_PRESSED;
+            playAudio(notes.NOTES.FS);
+            break;
+
+        case "R":
+        case "r": //r -> Ab
+            piano.src = notes.PIANO_A_FLAT_PRESSED;
+            playAudio(notes.NOTES.Ab);
+            break;
+
+        case "T":
+        case "t": //t -> Bb
+            piano.src = notes.PIANO_B_FLAT_PRESSED;
+            playAudio(notes.NOTES.Bb);
+            break;
+
+        case "Y":
+        case "y": //y -> high C#
+            piano.src = notes.PIANO_HIGH_CS_PRESSED;
+            playAudio(notes.NOTES.hCS);
+            break;
+
+        case "U":
+        case "u": //u -> high Eb
+            piano.src = notes.PIANO_HIGH_E_FLAT_PRESSED;
+            playAudio(notes.NOTES.hEb);
+            break;
+
+        case "J":
+        case "j": //j -> move up an octave
+            changePianoOctave("up");
+            break;
+
+        case "K":
+        case "k": //k -> move down an octave
+            changePianoOctave("down");
+            break;
+
+        default:
+            break;
+    }
+}
+
+
 
 //given the note pressed, play that note
 function playAudio(note)
