@@ -2,7 +2,9 @@
 
 Play the piano by only using your keyboard.
 
-Website Link: https://projects.charptrzero.com/project1/interactivepiano
+Github Pages Link: https://charptr0.github.io/Interactive-Piano/
+
+Personal Website Link: https://projects.charptrzero.com/project1/interactivepiano
 
 ## Version 1.1
 - Added partial mobile support
